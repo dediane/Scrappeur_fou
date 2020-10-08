@@ -36,7 +36,7 @@ end
 def make_final_array
   first_names = get_array_first_names
   last_names = get_array_last_names
-  #emails = get_array_mails
+  emails = get_array_mails
   array = []
   
   if first_names.length == last_names.length
@@ -44,7 +44,7 @@ def make_final_array
       final_hash = {}
       final_hash["First name:"] = first_names[i] 
       final_hash["Last name:"] = last_names[i] 
-      #final_hash["Emails:"] = emails[i]
+      final_hash["Emails:"] = emails[i]
       array << final_hash
     end
     return array
@@ -53,17 +53,23 @@ end
 
 
 
+#--To put each input one by one--
 
 
-
-#puts get_array_urls
-#puts get_array_urls.length
-#puts get_array_first_names
-#puts get_array_mails
+# puts get_array_urls
+# puts get_array_urls.length
+# puts get_array_first_names
+# puts get_array_first_names.length
+# puts get_array_mails
+# puts get_array_mails.length
 #puts get_array_last_names
 #puts "a = ["
+
+#-- Puts the array with no "styling"
 #puts make_final_array
+
+#-- Puts the array as in the exemple
 make_final_array.each do |name| 
-  puts "{\n\"first_name\" => #{name.values[0]},\n \"last_name\" => #{name.values[1]},\n},"
+  puts "{\n\"first_name\" => #{name.values[0]},\n \"last_name\" => #{name.values[1]},\n \"emails\" => #{name.values[2]},\n},"
 end
 puts "]"
