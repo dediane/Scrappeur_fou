@@ -12,6 +12,8 @@ ex: BTC => 10000</p>
 
 **Exercise 01_Mairie_Christmas**
 
+***Warning:***The program takes about 30sec to 1 min to run. Please be patient. :)
+
 <p> Get mail adress of all townhall in the 95 dept.   
 Return an Array that contains hashes like that:   
 KEY: Name of the city => VALUE: email adress </p>
@@ -20,7 +22,7 @@ KEY: Name of the city => VALUE: email adress </p>
 
 **Exercise 02_Cher_depute**
 
-***Warning:*** The programs takes a few minutes tu RUN, please be patient.   
+***Warning:*** The program takes a few minutes tu RUN, please be patient.   
 It will takes about 5min to print all the output.   
 
 
