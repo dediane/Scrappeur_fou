@@ -61,4 +61,9 @@ end
 #puts get_array_first_names
 #puts get_array_mails
 #puts get_array_last_names
-puts make_final_array
+#puts "a = ["
+#puts make_final_array
+make_final_array.each do |name| 
+  puts "{\n\"first_name\" => #{name.values[0]},\n \"last_name\" => #{name.values[1]},\n},"
+end
+puts "]"
