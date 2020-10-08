@@ -1,6 +1,6 @@
 # Scrapping in Ruby
 
-###Exercises about scraping in Ruby using Gem Nokogiri
+### Exercises about scraping in Ruby using Gem Nokogiri
 
 **Exercise 00_Dark_trader**
 
