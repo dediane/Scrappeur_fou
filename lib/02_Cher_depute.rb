@@ -36,15 +36,15 @@ end
 def make_final_array
   first_names = get_array_first_names
   last_names = get_array_last_names
-  emails = get_array_mails
+  #emails = get_array_mails
   array = []
   
   if first_names.length == last_names.length
     first_names.length.times do |i|
       final_hash = {}
-      final_hash["First name:"] = first_names[i]
-      final_hash["Last name:"] = last_names[i]
-      final_hash["Emails:"] = emails[i]
+      final_hash["First name:"] = first_names[i] 
+      final_hash["Last name:"] = last_names[i] 
+      #final_hash["Emails:"] = emails[i]
       array << final_hash
     end
     return array
