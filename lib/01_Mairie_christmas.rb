@@ -1,8 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-avernes = "https://www.annuaire-des-mairies.com/95/avernes.html"
-
 def get_townhall_email(townhall_url)
   page = Nokogiri::HTML(URI.open(townhall_url))
   mail = page.xpath'/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]/text()'
