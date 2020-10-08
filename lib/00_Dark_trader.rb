@@ -4,10 +4,7 @@ require 'open-uri'
 page = Nokogiri::HTML(URI.open("https://coinmarketcap.com/all/views/all/"))
 
 all_currency_symbols = page.xpath('/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/div/table/tbody/tr/td[3]/div').map{|x| x.text}
-all_currency_prices = page.xpath('/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/div/table/tbody/tr/td[5]/a').map{|x| x.text.delete('$').to_f}
-
-#puts all_currency_symbols
-#puts all_currency_prices
+all_currency_prices = page.xpath('/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[3]/div/table/tbody/tr/td[5]/a').map{|x| x.text.delete('$').gsub(',','').to_f}
 
 def get_array_of_hash(all_currency_symbols, all_currency_prices)
   array = []
@@ -22,4 +19,5 @@ def get_array_of_hash(all_currency_symbols, all_currency_prices)
   return array
 end
 
-puts get_array_of_hash(all_currency_symbols, all_currency_prices)
+final_hash = get_array_of_hash(all_currency_symbols, all_currency_prices)
+puts final_hash
