@@ -30,22 +30,10 @@ def get_array_of_mails
   return array_of_mails
 end
 
-def get_array_of_hash(names, emails)
-  array = []
-  if names.length == emails.length
-    names.length.times do |i|
-      result_hash = {}
-      result_hash[names[i]] = emails[i]
-      array.push(result_hash)
-    end
-  end
-  return array
-end
-
 def perform 
   emails = get_array_of_mails
   names = get_townhall_names
-  puts get_array_of_hash(names, emails)
+  puts hash = Hash[names.zip(emails)].each_slice(1).map(&:to_h)
 end
 
 perform

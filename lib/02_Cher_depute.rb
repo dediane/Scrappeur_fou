@@ -4,9 +4,6 @@ require 'open-uri'
 def get_one_mail(url_depute)
   page = Nokogiri::HTML(URI.open(url_depute))
   mail = page.xpath'/html/body/div/div[3]/div/div/div/section[1]/div/article/div[3]/div/dl/dd[4]/ul/li[2]/a/text()'
-    if mail == nil
-      page.xpath'/html/body/div/div[3]/div/div/div/section[1]/div/article/div[3]/div/dl/dd[3]/ul/li[2]/a/text()'
-    end
   return mail.to_s
 end 
 
@@ -25,8 +22,6 @@ def get_array_first_names
   array_of_names = array_of_names.collect{|x|x[1]}
 end
 
-
-
 def get_array_last_names
   page = get_page
   array_of_names = page.xpath('/html/body/div/div[3]/div/div/section/div/article/div[3]/div/div[3]/div/ul/li').map{|x| x.text.split}
@@ -44,7 +39,6 @@ def make_final_array
   last_names = get_array_last_names
   emails = get_array_mails
   array = []
-  
   if first_names.length == last_names.length
     first_names.length.times do |i|
       final_hash = {}
@@ -56,8 +50,6 @@ def make_final_array
     return array
   end
 end
-
-
 
 #--To put each input one by one--
 
@@ -72,10 +64,10 @@ end
 #puts "a = ["
 
 #-- Puts the array with no "styling"
-# puts make_final_array
+puts make_final_array
 
 #-- Puts the array as in the exemple
-make_final_array.each do |name| 
-  puts "{\n\"first_name\" => #{name.values[0]},\n \"last_name\" => #{name.values[1]},\n \"emails\" => #{name.values[2]},\n},"
-end
-puts "]"
+# make_final_array.each do |name| 
+#   puts "{\n\"first_name\" => #{name.values[0]},\n \"last_name\" => #{name.values[1]},\n \"emails\" => #{name.values[2]},\n},"
+# end
+# puts "]"
